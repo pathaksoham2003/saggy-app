@@ -1,3 +1,5 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const PORT = process.env.PORT || 3001;
 const express = require("express");
 const app = express();
@@ -19,7 +21,7 @@ const server = app.listen(PORT , () =>{
 
 const io = socket(server,{
     cors:{
-        origin:"https://saggy-chat-9lld8jeqw-pathaksoham2003.vercel.app/",
+        origin: process.env.FRONTEND_URL,
         credentials:true,
     }
 })
