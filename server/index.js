@@ -10,7 +10,10 @@ db();
 const socket = require("socket.io");
 const cors = require("cors");
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+        origin: process.env.FRONTEND_URL,
+        credentials:true,
+    }));
 
 app.use("/api/auth" , userRoutes);
 app.use("/api/messages" , messageRoute);
