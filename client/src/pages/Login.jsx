@@ -34,7 +34,13 @@ const Login = () => {
       const { username, password } = values;
       const postData = { username, password };
       await axios
-        .post(loginRoute, postData)
+        .post(loginRoute,{
+        headers: {
+          "Cache-Control": "no-cache",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Access-Control-Allow-Origin": "*",
+        },
+      } , postData)
         .then((res) => {
           if (res.data.status === false) {
             toast(res.data.msg);
