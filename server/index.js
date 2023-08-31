@@ -15,8 +15,8 @@ app.use(cors({
         credentials:true,
     }));
 
-app.use("/api/auth" , userRoutes);
-app.use("/api/messages" , messageRoute);
+app.use("api/auth" , userRoutes);
+app.use("api/messages" , messageRoute);
 
 const server = app.listen(PORT , () =>{
     console.log(`server has started at port : ${PORT}`)
