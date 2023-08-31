@@ -21,7 +21,7 @@ const server = app.listen(PORT , () =>{
 
 const io = socket(server,{
     cors:{
-        origin: process.env.FRONTEND_URL,
+        origin: "https://saggy-app.vercel.app/",
         credentials:true,
     }
 })
