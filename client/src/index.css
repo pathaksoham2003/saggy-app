@@ -1,0 +1,51 @@
+:root {
+  /*For Dark And Light Theme*/
+  --bgc:#dce9f0;
+  --bgc-acc:#b7d0e4;
+  --h:#0f1855;
+  --sh:#58595b;
+  --but:#0c688a;
+  --but-txt:#d6dee3;
+  --grd-c1: #0c688a;
+  --grd-c2:#14b887;
+
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+ 
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+html{
+  margin:0;
+  padding:0;
+  min-height:100vh;
+}
+/* LIGHT AND DARK THEME OPTIONS */
+[data-theme="dark"]{
+  --bgc:#21201F;
+  --bgc-acc:#151515;
+  --h:#F8F8F8;
+  --sh:#CCCCCC;
+  --but:#820c78;
+  --but-txt:#3f0c82;
+  --grd-c1: #3f0c82;
+  --grd-c2:#820c78;
+}
+/* for smooth change of the color */
+*{
+  transition: color 0.2s ease-in-out,background-color 0.5s ease-in-out;
+  margin:0;
+  padding:0;
+}
+a{
+  color:white;
+  font-weight: 600;
+  text-decoration: underline;
+}
