@@ -10,7 +10,7 @@ db();
 const socket = require("socket.io");
 const cors = require("cors");
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin:"*"}));
 
 app.use("api/auth" , userRoutes);
 app.use("api/messages" , messageRoute);
@@ -21,8 +21,7 @@ const server = app.listen(PORT , () =>{
 
 const io = socket(server,{
     cors:{
-        origin: process.env.FRONTEND_URL,
-        credentials:true,
+        origin: "*"
     }
 })
 global.onlineUsers = new Map();
