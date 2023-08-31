@@ -1,4 +1,4 @@
-export const host = "https://saggy-app-serve.vercel.app/";
+export const host = import.meta.env.VITE_SERVER_URL;
 
 export const registerRoute = `${host}/api/auth/register`;
 export const loginRoute = `${host}/api/auth/login`;
