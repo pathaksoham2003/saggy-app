@@ -19,24 +19,24 @@ const server = app.listen(PORT , () =>{
     console.log(`server has started at port : ${PORT}`)
 })
 
-const io = socket(server,{
-    cors:{
-        origin: "*"
-    }
-})
-global.onlineUsers = new Map();
+// const io = socket(server,{
+//     cors:{
+//         origin: "*"
+//     }
+// })
+// global.onlineUsers = new Map();
 
-io.on("connection" , (socket) =>{
+// io.on("connection" , (socket) =>{
     
-    global.chatSocket = socket;
-    socket.on("add-user" , (userId) =>{
-        onlineUsers.set(userId,socket.id);
-        console.log(global.onlineUsers);
-    })
-    socket.on("send-msg" , (data) =>{
-        const sendUserSocket = onlineUsers.get(data.to);
-        if(sendUserSocket){
-            socket.to(sendUserSocket).emit("msg-recieve" , data.messages);
-        }
-    })
-})
+//     global.chatSocket = socket;
+//     socket.on("add-user" , (userId) =>{
+//         onlineUsers.set(userId,socket.id);
+//         console.log(global.onlineUsers);
+//     })
+//     socket.on("send-msg" , (data) =>{
+//         const sendUserSocket = onlineUsers.get(data.to);
+//         if(sendUserSocket){
+//             socket.to(sendUserSocket).emit("msg-recieve" , data.messages);
+//         }
+//     })
+// })
