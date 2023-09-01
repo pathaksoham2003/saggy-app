@@ -14,7 +14,9 @@ app.use(cors({origin:"*"}));
 
 app.use("api/auth" , userRoutes);
 app.use("api/messages" , messageRoute);
-
+app.get("/",(req,res)=>{
+    res.status(200).json({message:"Wow"});
+}
 const server = app.listen(PORT , () =>{
     console.log(`server has started at port : ${PORT}`)
 })
