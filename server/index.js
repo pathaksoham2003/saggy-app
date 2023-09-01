@@ -19,12 +19,13 @@ const server = app.listen(PORT , () =>{
     console.log(`server has started at port : ${PORT}`)
 })
 
-const io = socket(server,{
-    cors:{
-        origin: "*",
-        credentails:true
+const io = socket(server, {
+    cors: {
+        origin: "https://saggy-app.vercel.app",
+        methods: ["GET", "POST"],
+        credentials: true
     }
-})
+});
 global.onlineUsers = new Map();
 
 io.on("connection" , (socket) =>{
