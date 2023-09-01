@@ -9,9 +9,7 @@ const db = require("./db");
 db();
 const socket = require("socket.io");
 const cors = require("cors");
-server.prependListener("*", (req, res) => {
-   res.setHeader("Access-Control-Allow-Origin", "*");
-});
+
 app.use(express.json());
 app.use(cors({origin:"*"}));
 
