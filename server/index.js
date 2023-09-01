@@ -13,8 +13,8 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors({origin:"*"}));
 
-app.use("api/auth" , userRoutes);
-app.use("api/messages" , messageRoute);
+app.use("/api/auth" , userRoutes);
+app.use("/api/messages" , messageRoute);
 
 const server = app.listen(PORT , () =>{
     console.log(`server has started at port : ${PORT}`)
