@@ -28,7 +28,11 @@ export default function Chat(){
    // the following function will create the socket object and store it into the useRef() hood for meutable updates without rendering the component
     useEffect(()=>{
         if(currentuser){
-            socket.current = io(host);
+            socket.current = io(host,{
+    path: '/socket.io', // Add this if your server uses a custom path
+    transports: ['polling', 'websocket'],
+    // You can configure additional options here if needed
+});
             socket.current.emit("add-user" , currentuser._id)
         }
     }, [currentuser])
