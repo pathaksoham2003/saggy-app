@@ -63,7 +63,6 @@ const Login = () => {
     return true;
   };
   const handelChange = (e) => {
-    console.log(e.target.value);
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   return (
